@@ -1,0 +1,63 @@
+$myfont: 'Lato', sans-serif;
+$myColor: #612958;
+
+@mixin bradius5 {
+    border-radius: .5em;
+    border: 1px solid rgb(126, 126, 126)
+}
+
+body {
+    background-color: bisque;  
+    font-family: 'Lato', sans-serif; 
+    padding-right: 2em;  
+    padding-left: 2em; 
+}       
+  
+h1, h2, h3 {  
+    color: $myColor; 
+}     
+
+.mybutton {     
+    background: pink;
+}
+.card { 
+    @include bradius5;
+    background: #fff url('../img/hot_plain_bread.svg') bottom right no-repeat;
+    box-shadow: -5px 10px 10px #afaca8;
+    padding: 1em;
+}
+.card2 {
+    @include bradius5;
+    background: #fff url('../img/hot_plain_bread2.svg') bottom right no-repeat;
+    box-shadow: -5px 10px 10px #afaca8;
+    padding: 1em;
+}
+img {
+    max-width: 100%;
+    height: auto; 
+}
+.stretch {
+    display: grid;
+    justify-self: stretch;
+} 
+
+// .b-icon {
+//    background: url('../img/hot_plain_bread.svg') bottom right no-repeat;
+//}
+.topmenu a:hover{  
+    background-color: orange;  
+}  
+.topmenu li{ 
+    color: black;    
+    list-style-type: none;     
+}
+.topmenu span{  
+    padding: 0.3em;  
+}  
+.col-4 img { 
+    height: 250px;  
+    width: 250px;   
+    object-fit: cover; 
+}
+   
+@import 'layout','icomoon','socialbutts','advert','topmenu';

@@ -1,0 +1,77 @@
+.menuInput {
+    display: none; 
+}
+.menuLabel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 2.5em;
+    height: 1.6em;
+    color: purple;
+    font-size: 1.3em;
+    text-align: left;
+    padding: .5em;
+    transition: all .4s ease;
+    z-index: 999;
+}
+.menuInput:checked + .menuLabel { /* þegar ýtt er á menu label */
+    transform: translate(-23px, -3px) rotate(-90deg); /* animation sem snýr tákninu á hlið */
+    transition: all .5s ease;
+}
+.menuInput:checked ~ .topmenu { /* þegar ýtt er á topmenu */
+    position: fixed;
+    top: 3em;
+    right: 0;
+    z-index: 980;
+    transition: all .5s ease;
+}
+.topmenu { /* þegar það er ekki ýtt á topmenu; bara default staðan */
+    display: block;
+    position: fixed;
+    top: 3em;
+    right: -15em; /* Lætur þetta vera fyrir utan síðuna nema maður ýtir á topmenu */
+    z-index: 980;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: all .5s ease;
+    background-color: rgba(255,255,255, .8);
+    a {
+    display: block;
+    color: purple;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 1em;
+    margin: 0;
+    letter-spacing: .1em;
+      &:hover,
+      &:active {
+      color: pink;
+      background-color: lighten(pink, 20%);
+      }
+    }
+}
+.topmenu a.current {
+    color: pink;
+}
+
+@media screen and (min-width: 48em) {
+    .topnav {
+        margin: 1em 0 0 2em;
+        border-radius: 3px;
+    }
+    .topmenu {
+        display: flex; /* breyti í flex úr block fyrir stærri skjái */
+        flex-flow: row;
+        justify-content: flex-end;
+        position: relative;
+        top: 0;
+        right: 0;
+        background-color: rgba(255,255,255, .3);
+        transition: none; 
+    }
+    .menuLabel {
+        display: none; 
+    }
+}
